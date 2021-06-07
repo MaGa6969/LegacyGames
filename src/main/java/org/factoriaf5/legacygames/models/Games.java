@@ -1,6 +1,15 @@
 package org.factoriaf5.legacygames.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import static javax.persistence.GenerationType.SEQUENCE;
+
+@Entity
 public class Games {
+    @Id
+    @GeneratedValue(strategy = SEQUENCE)
     private Long id;
     private String title;
     private Character platform;
