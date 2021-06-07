@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
-public class Games {
+public class Game {
     @Id
     @GeneratedValue(strategy = SEQUENCE)
     private Long id;
