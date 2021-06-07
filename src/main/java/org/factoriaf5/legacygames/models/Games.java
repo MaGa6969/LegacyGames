@@ -36,4 +36,64 @@ public class Games {
     public void setPlatform(Character platform) {
         this.platform = platform;
     }
+    public int getYear() {
+        return year;
+    }
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getEtiqueta() {
+        return etiqueta;
+    }
+    public void setEtiqueta(String etiqueta) {
+        this.etiqueta = etiqueta;
+    }
+    public int getDiscount() {
+        return discount;
+    }
+    public void setDiscount(int discount) {
+        this.discount = discount;
+    }
+    public Double getPriceDiscount(){
+        return priceDiscount;
+    }
+    public void setPriceDiscount(Double priceDiscount) {
+        this.priceDiscount = priceDiscount;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+    public void setPublisher(String publisher){
+        this.publisher = publisher;
+    }
+    public int getPegi() {
+        return pegi;
+    }
+    public void setPegi(int pegi) {
+        this.pegi = pegi;
+    }
+     public String getPegiDescriptors() {
+        return pegiDescriptors;
+     }
+    public void setPegiDescriptors(String pegiDescriptors) {
+        this.pegiDescriptors = pegiDescriptors;
+    }
+
 }
