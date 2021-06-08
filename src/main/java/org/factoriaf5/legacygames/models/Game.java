@@ -12,12 +12,12 @@ public class Game {
     @GeneratedValue(strategy = SEQUENCE)
     private Long id;
     private String title;
-    private Character platform;
+    private String platform;
     private int year;
-    private Double price;
+    private float price;
     private String etiqueta;
     private int discount;
-    private Double priceDiscount;
+    private float priceDiscount;
     private String category;
     private String publisher;
     private int pegi;
@@ -38,11 +38,11 @@ public class Game {
         this.title = title;
     }
 
-    public Character getPlatform() {
+    public String getPlatform() {
         return platform;
     }
 
-    public void setPlatform(Character platform) {
+    public void setPlatform(String platform) {
         this.platform = platform;
     }
     public int getYear() {
@@ -52,11 +52,11 @@ public class Game {
         this.year = year;
     }
 
-    public Double getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -72,10 +72,10 @@ public class Game {
     public void setDiscount(int discount) {
         this.discount = discount;
     }
-    public Double getPriceDiscount(){
+    public float getPriceDiscount(){
         return priceDiscount;
     }
-    public void setPriceDiscount(Double priceDiscount) {
+    public void setPriceDiscount(float priceDiscount) {
         this.priceDiscount = priceDiscount;
     }
 
