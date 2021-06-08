@@ -32,7 +32,20 @@
         <tr th:each="game: ${games}">
             <th scope="row" th:text="${game.id}"></th>
             <td th:text="${game.title}"></td>
+<<<<<<< HEAD:src/main/resources/templates/Games/all.html
+            <td th:text="${game.platform}"></td>
+            <td th:text="${game.year}"></td>
             <td th:text="${game.price}"></td>
+            <td th:text="${game.etiqueta}"></td>
+            <td th:text="${game.discount}"></td>
+            <td th:text="${game.priceDiscount}"></td>
+            <td th:text="${game.category}"></td>
+            <td th:text="${game.publisher}"></td>
+            <td th:text="${game.pegi}"></td>
+            <td th:text="${game.pegiDescriptor}"></td>
+=======
+            <td th:text="${game.price}"></td>
+>>>>>>> 0550eee8dcce5ba172a075060674fff963fbe705:src/main/resources/templates/games/all.html
         </tr>
         </tbody>
     </table>
