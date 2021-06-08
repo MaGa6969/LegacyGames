@@ -26,18 +26,19 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="book: ${books}">
-            <th scope="row" th:text="${book.id}"></th>
-            <td th:text="${book.title}"></td>
-            <td th:text="${book.author}"></td>
-            <td th:text="${book.category}"></td>
-            <td th:text="${book.category}"></td>
-            <td th:text="${book.category}"></td>
-            <td  th:text="${book.category}"></td>
-            <td th:text="${book.category}"></td>
-            <td th:text="${book.category}"></td>
-            <td th:text="${book.category}"></td>
-            <td th:text="${book.category}"></td>
+        <tr th:each="game: ${games}">
+            <th scope="row" th:text="${game.id}"></th>
+            <td th:text="${game.title}"></td>
+            <td th:text="${game.platform}"></td>
+            <td th:text="${game.year}"></td>
+            <td th:text="${game.price}"></td>
+            <td th:text="${game.etiqueta}"></td>
+            <td th:text="${game.discount}"></td>
+            <td th:text="${game.priceDiscount}"></td>
+            <td th:text="${game.category}"></td>
+            <td th:text="${game.publisher}"></td>
+            <td th:text="${game.pegi}"></td>
+            <td th:text="${game.pegiDescriptor}"></td>
         </tr>
         </tbody>
     </table>
