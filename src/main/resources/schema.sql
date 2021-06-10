@@ -3,7 +3,7 @@ CREATE TABLE game (
                        id   BIGSERIAL PRIMARY KEY,
                        title VARCHAR(255) NOT NULL,
                        platform VARCHAR(255) NOT NULL,
-                       year VARCHAR(255) NOT NULL,
+                       year INTEGER NOT NULL,
                        price DOUBLE PRECISION,
                        etiqueta VARCHAR(255),
                        discount INTEGER,
