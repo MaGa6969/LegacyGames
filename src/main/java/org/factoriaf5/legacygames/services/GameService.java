@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class GameService {
 
-    private final GameRepository gameRepository;
+    private static GameRepository gameRepository;
 
     @Autowired
     public GameService(GameRepository gameRepository) {
@@ -24,7 +24,7 @@ public class GameService {
         return allGames;
     }
 
-    public void save(Game game) {
+    public static void save(Game game) {
         gameRepository.save(game);
     }
 
