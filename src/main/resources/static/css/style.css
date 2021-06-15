@@ -13,3 +13,21 @@
 .game img {
     width: 250px;
 }
+.gameTitle {
+    font-weight: bold;
+}
+
+.gameDiscount {
+    background-color: orangered;
+    width: 70px;
+    font-size: 35px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+
+}
+
+.prices {
+    text-align: right;
+    margin: 10px;
+}
