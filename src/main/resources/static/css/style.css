@@ -19,6 +19,7 @@
 
 .gameDiscount {
     background-color: orangered;
+    margin-right: 30px;
     width: 70px;
     font-size: 35px;
     margin-bottom: 5px;
@@ -30,4 +31,9 @@
 .prices {
     text-align: right;
     margin: 10px;
+}
+
+.cardFooter {
+    display: flex;
+    flex-direction: row;
 }

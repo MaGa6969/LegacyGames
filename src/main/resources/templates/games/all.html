@@ -26,24 +26,25 @@
 <!--            <th scope="col" >PEGI content descriptors</th>-->
 <!--        </tr>-->
 <!--        </thead>-->
-        <tbody>
+<!--        <tbody>-->
 
         <div class="game" th:each="game: ${games}">
             <img th:src="@{/images/default.jpg}">
             <div class="gameTitle" th:text="${game.title}"></div>
             <div th:text="${game.platform}"></div>
             <div th:text="${game.pegi}"></div>
+       <div class="cardFooter">
+           <div class="gameDiscount" th:text="${game.discount}"></div>
          <div class="prices">
             <div th:text="${game.price}"></div>
             <div th:text="${game.priceDiscount}"></div>
          </div>
-            <div class="gameDiscount" th:text="${game.discount}"></div>
-
+       </div>
 
 
         </div>
 
-        </tbody>
+<!--        </tbody>-->
 
     </div>
 </section>
