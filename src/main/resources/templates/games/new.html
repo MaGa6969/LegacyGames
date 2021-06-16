@@ -6,6 +6,7 @@
 <header th:replace="fragments/header"></header>
 
 <section class="container">
+    <h1 th:text="${title}"></h1>
     <form th:action="@{/games/new}" th:object="${game}" method="post">
         <div class="form-group">
             <input type="hidden" th:field="*{id}">
@@ -29,9 +30,9 @@
                    placeholder="Enter price">
         </div>
         <div class="form-group">
-            <label class="col-md2" for="tag">Tag</label>
-            <input th:field="*{tag}" type="text" class="col-md6 form-control form-control-sm" id="tag"
-                   placeholder="Enter tag">
+            <label class="col-md2" for="etiqueta">Etiqueta</label>
+            <input th:field="*{etiqueta}" type="text" class="col-md6 form-control form-control-sm" id="etiqueta"
+                   placeholder="Enter etiqueta">
         </div>
         <div class="form-group">
             <label class="col-md2" for="discount">Discount</label>
@@ -62,6 +63,9 @@
             <label class="col-md2" for="pegiDescriptors">PegiDescriptors</label>
             <input th:field="*{pegiDescriptors}" type="text" class="col-md6 form-control form-control-sm" id="pegiDescriptors"
                    placeholder="Enter pegiDescriptors">
+        </div>
+        <div class="card-footer ">
+            <input type="submit" class="btn btn-primary btn-sm" value="Save"/>
         </div>
     </form>
 </section>

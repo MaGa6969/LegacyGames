@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Legacy Games</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-</head>
+ <head th:replace="fragments/head"></head>
 <body>
 <header th:replace="fragments/header"></header>
 <section class="container">
-
-
-
     <h1 th:text="${title}"></h1>
     <table class="table table-hover">
         <thead>
@@ -43,6 +36,11 @@
             <td th:text="${game.publisher}"></td>
             <td th:text="${game.pegi}"></td>
             <td th:text="${game.pegiDescriptors}"></td>
+            <td> <a class="btn btn-success btn-sm" th:href="'/games/edit/'+${game.id}">Edit</a>
+            </td>
+            <td>
+                <a class="btn btn-danger btn-sm" th:href="'/games/delete/'+${game.id}">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>

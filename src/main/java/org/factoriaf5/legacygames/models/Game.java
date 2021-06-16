@@ -3,11 +3,15 @@ package org.factoriaf5.legacygames.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import java.io.Serializable;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
-public class Game {
+
+public class Game{
     @Id
     @GeneratedValue(strategy = SEQUENCE)
     private Long id;

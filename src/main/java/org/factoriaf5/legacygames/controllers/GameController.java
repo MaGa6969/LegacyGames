@@ -5,12 +5,11 @@ import org.factoriaf5.legacygames.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @Controller
+
 public class GameController {
     private GameService gameService;
 
@@ -26,16 +25,23 @@ public class GameController {
         model.addAttribute("games", games);
         return "games/all";
     }
-    @GetMapping("/games/new")
-    String getForm(Model model){
-        Game game = new Game();
+
+    @GetMapping("/edit/{id}")
+    String editGame(Model model, @PathVariable Long id){
+        Game game = gameService.findById(id);
         model.addAttribute("game", game);
-        return "games/new";
-    }
-    @PostMapping("/new")
-    String addGame(@ModelAttribute Game game) {
-        GameService.save(game);
-        return "redirect:/games";
+        model.addAttribute("title", "Edit game");
+        return "/games/new";
     }
 
+    @PostMapping("/new")
+    String addGame(@ModelAttribute Game game) {
+        gameService.save(game);
+        return "redirect:/games";
+    }
+    @GetMapping("/delete/{id}")
+    String removeGame(@PathVariable Long id){
+        gameService.delete(id);
+        return "redirect:/games";
+    }
 }
