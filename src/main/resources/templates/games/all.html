@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
- <head th:replace="fragments/head"></head>
-<head th:replace="fragments/head">
-</head>
-<body>
-<header th:replace="fragments/header"></header>
-<section class="container">
+
+<section class="container" xmlns:th="http://www.thymeleaf.org">
     <h1 th:text="${title}"></h1>
     <div class="table">
         <div class="game" th:each="game: ${games}">
@@ -13,16 +7,16 @@
             <div class="gameTitle" th:text="${game.title}"></div>
             <div th:text="${game.platform}"></div>
             <div th:text="${game.pegi}"></div>
+
        <div class="cardFooter">
            <div class="gameDiscount" th:text="${game.discount}"></div>
          <div class="prices">
             <div th:text="${game.price}"></div>
             <div th:text="${game.priceDiscount}"></div>
          </div>
+           <a class="btn btn-success btn-sm" th:href="'/games/edit/'+${game.id}">Edit</a>
+           <a class="btn btn-danger btn-sm" th:href="'/games/delete/'+${game.id}">Delete</a>
        </div>
         </div>
     </div>
 </section>
-<footer th:replace="fragments/footer"></footer>
-</body>
-</html>

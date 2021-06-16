@@ -26,20 +26,19 @@ public class GameController {
         return "games/all";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/games/edit/{id}")
     String editGame(Model model, @PathVariable Long id){
         Game game = gameService.findById(id);
         model.addAttribute("game", game);
         model.addAttribute("title", "Edit game");
-        return "/games/new";
+        return "/games/all";
     }
-
-    @PostMapping("/new")
+    @PostMapping("/games/new")
     String addGame(@ModelAttribute Game game) {
         gameService.save(game);
         return "redirect:/games";
     }
-    @GetMapping("/delete/{id}")
+    @GetMapping("/games/delete/{id}")
     String removeGame(@PathVariable Long id){
         gameService.delete(id);
         return "redirect:/games";
