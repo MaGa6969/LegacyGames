@@ -31,9 +31,9 @@ public class GameController {
         Game game = gameService.findById(id);
         model.addAttribute("game", game);
         model.addAttribute("title", "Edit game");
-        return "/games/new";
+        return "/games/stock";
     }
-    @PostMapping("/games/new")
+    @PostMapping("/games/stock")
     String addGame(@ModelAttribute Game game) {
         gameService.save(game);
         return "redirect:/games";
