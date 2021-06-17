@@ -31,7 +31,7 @@ public class GameController {
         Game game = gameService.findById(id);
         model.addAttribute("game", game);
         model.addAttribute("title", "Edit game");
-        return "/games/all";
+        return "/games/new";
     }
     @PostMapping("/games/new")
     String addGame(@ModelAttribute Game game) {
