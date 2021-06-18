@@ -1,5 +1,9 @@
-
-<section class="container" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head"></head>
+<body>
+<header th:replace="fragments/header"></header>
+<section class="container">
     <h1 th:text="${title}"></h1>
     <div class="table">
         <div class="game" th:each="game: ${games}">
@@ -20,3 +24,6 @@
         </div>
     </div>
 </section>
+<footer th:replace="fragments/footer"></footer>
+</body>
+</html>

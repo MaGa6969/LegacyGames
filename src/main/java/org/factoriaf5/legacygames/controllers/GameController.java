@@ -25,19 +25,26 @@ public class GameController {
         model.addAttribute("games", games);
         return "games/all";
     }
-
-    @GetMapping("/games/edit/{id}")
-    String editGame(Model model, @PathVariable Long id){
-        Game game = gameService.findById(id);
+    @GetMapping("/games/stock")
+    String getForm(Model model){
+        Game game = new Game();
         model.addAttribute("game", game);
-        model.addAttribute("title", "Edit game");
-        return "/games/stock";
+        model.addAttribute("title", "Create new game");
+        return "games/stock";
     }
     @PostMapping("/games/stock")
     String addGame(@ModelAttribute Game game) {
         gameService.save(game);
         return "redirect:/games";
     }
+    @GetMapping("/games/edit/{id}")
+    String editGame(Model model, @PathVariable Long id){
+        Game game = gameService.findById(id);
+        model.addAttribute("game", game);
+        model.addAttribute("title", "Edit game");
+        return "games/stock";
+    }
+
     @GetMapping("/games/delete/{id}")
     String removeGame(@PathVariable Long id){
         gameService.delete(id);
