@@ -23,6 +23,17 @@ public class Game{
     private int pegi;
     private String pegiDescriptors;
 
+    @Override
+    public String toString() {
+        return "Game{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", price='" + price + '\'' +
+                ", category='" + category + '\'' +
+                '}';
+    }
+
+
     public Long getId() {
         return id;
     }
