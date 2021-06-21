@@ -8,7 +8,7 @@
 
 <section class="container">
     <h1 th:text="${title}"></h1>
-    <form th:action="@{/games/stock}" th:object="${game}" method="post" enctype="multipart/form-data>
+    <form th:action="@{/games/stock}" th:object="${game}" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <input type="hidden" th:field="*{id}">
             <label class="col-md2" for="title">Title</label>
@@ -43,6 +43,7 @@
             <label class="col-md2" for="discount">Discount</label>
             <input th:field="*{discount}" type="text" class="col-md6 form-control form-control-sm" id="discount"
                    placeholder="Enter discount">
+
         </div>
         <div class="form-group">
             <label class="col-md2" for="priceDiscount">PriceDiscount</label>

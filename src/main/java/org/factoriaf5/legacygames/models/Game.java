@@ -83,9 +83,7 @@ public class Game implements Serializable {
     public void setEtiqueta(String etiqueta) {
         this.etiqueta = etiqueta;
     }
-    public int getDiscount() {
-        return discount;
-    }
+    public int getDiscount() { return discount; }
     public void setDiscount(int discount) {
         this.discount = discount;
     }
@@ -122,11 +120,13 @@ public class Game implements Serializable {
         this.pegiDescriptors = pegiDescriptors;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getPhotoImagePath() {
+        if (photo == null || id == null) return null;
+        return "/game-photo/" + id + "/" + photo;
     }
 
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+
 }

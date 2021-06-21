@@ -5,8 +5,12 @@ import org.factoriaf5.legacygames.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.IOException;
 import java.util.List;
 @Controller
 
@@ -33,8 +37,12 @@ public class GameController {
         return "games/stock";
     }
     @PostMapping("/games/stock")
-    String addGame(@ModelAttribute Game game) {
+    public String addGame(@ModelAttribute Game game, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        game.setPhoto(fileName);
         gameService.save(game);
+        String uploadDir = "game-photo/" + game.getId();
+        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         return "redirect:/games";
     }
     @GetMapping("/games/edit/{id}")
