@@ -3,11 +3,15 @@ package org.factoriaf5.legacygames.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import java.io.Serializable;
+
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
-
-public class Game{
+@Table(name = "games")
+public class Game implements Serializable {
     @Id
     @GeneratedValue(strategy = SEQUENCE)
     private Long id;
@@ -22,6 +26,7 @@ public class Game{
     private String publisher;
     private int pegi;
     private String pegiDescriptors;
+    private String photo;
 
     @Override
     public String toString() {
@@ -30,6 +35,7 @@ public class Game{
                 ", title='" + title + '\'' +
                 ", price='" + price + '\'' +
                 ", category='" + category + '\'' +
+                ", photo='" + photo + '\'' +
                 '}';
     }
 
@@ -116,4 +122,11 @@ public class Game{
         this.pegiDescriptors = pegiDescriptors;
     }
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 }

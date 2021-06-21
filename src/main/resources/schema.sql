@@ -11,5 +11,6 @@ CREATE TABLE game (
                        category VARCHAR(255) NOT NULL,
                        publisher VARCHAR(255),
                        pegi INTEGER,
-                       pegi_descriptors VARCHAR(255)
+                       pegi_descriptors VARCHAR(255),
+                       photo VARCHAR(64) NOT NULL
 );
