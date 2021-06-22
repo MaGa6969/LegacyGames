@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS game;
-CREATE TABLE game (
+DROP TABLE IF EXISTS games;
+CREATE TABLE games (
                        id   BIGSERIAL PRIMARY KEY,
                        title VARCHAR(255) NOT NULL,
                        platform VARCHAR(255) NOT NULL,
