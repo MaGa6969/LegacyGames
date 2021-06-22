@@ -1,4 +1,45 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head th:replace="fragments/head"></head>
+<body>
+<header th:replace="fragments/header"></header>
+<section class="row d-flex align-self-stretch mt-5">
+    <h1 th:text="${title}"></h1>
+    <div class="col-4 mt-2  mb-2 ">
+        <div class="card px-3 pt-3 shadow-lg">
+            <img alt="img" class="card-img-top img-fluid " th:src="@{${game.photoImagePath}}" style="height:200px">
+            <div class="card-body">
+                <h4  th:text="${game.title}" class="card-title text-uppercase"></h4>
+                <div class="d-flex flex-column pb-3">
+                    <span th:text="${game.platform}" class="card-text text-uppercase"></span>
+                    <span th:text="${game.pegi}" class="card-text text-uppercase">PEGI</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    <!-- descuento-->
+                    <h1><span th:text="${game.discount}" class="badge bg-warning fw-bold text-white"></span></h1>
+                    <!-- precios-->
+                    <div th:text="${game.price}" class="d-flex align-items-end flex-column m-0">
+                        <span th:text="${game.priceDiscount}" class="text-decoration-line-through"></span>
+                        <h3><span class="fw-bold"></span></h3>
+                    </div>
+                </div>
+                <div class="btn-toolbar justify-content-center mt-4">
+                    <div class=" btn-group me-2">
+                        <button  th:href="'/games/edit/'+${game.id}" class="btn btn-outline-primary" type="button">Edit</button>
+                    </div>
+                    <div class="btn-group">
+                        <button th:href="'/games/delete/'+${game.id}" class="btn btn-outline-danger" type="button">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer th:replace="fragments/footer"></footer>
+</body>
+</html>
+<!--
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/head"></head>
 <body>
@@ -7,7 +48,7 @@
     <h1 th:text="${title}"></h1>
     <div class="table">
         <div class="game" th:each="game: ${games}">
-<!--            <img th:src="@{/images/default.jpg}">-->
+&lt;!&ndash;            <img th:src="@{/images/default.jpg}">&ndash;&gt;
          <img th:src="@{${game.photoImagePath}}" />
             <div class="gameTitle" th:text="${game.title}"></div>
             <div th:text="${game.platform}"></div>
@@ -27,4 +68,4 @@
 </section>
 <footer th:replace="fragments/footer"></footer>
 </body>
-</html>
+</html>-->
