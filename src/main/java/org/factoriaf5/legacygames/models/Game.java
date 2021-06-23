@@ -10,7 +10,7 @@ import java.io.Serializable;
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
-@Table(name = "games")
+@Table(name = "game")
 public class Game implements Serializable {
     @Id
     @GeneratedValue(strategy = SEQUENCE)

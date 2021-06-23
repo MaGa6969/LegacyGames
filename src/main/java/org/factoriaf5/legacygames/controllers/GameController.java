@@ -37,7 +37,10 @@ public class GameController {
         return "games/stock";
     }
     @PostMapping("/games/stock")
-    public String addGame(@ModelAttribute Game game, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+    public String addGame(
+            @ModelAttribute Game game,
+            @RequestParam("image") MultipartFile multipartFile)
+            throws IOException {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         game.setPhoto(fileName);
         gameService.save(game);
