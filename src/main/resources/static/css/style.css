@@ -1,39 +1,18 @@
-.table {
-    display: flex;
-    flex-wrap: wrap;
+body {
+    background-color: black;
+    font-family: Arial;
+}
+header {
+    background-color: #ffffff80;
+    box-shadow: 0 5px rgba(144, 144, 144, 0.5);
+}
+.gamelist {
+    color: white;
+}
+.nav-link {
+    color: black;
+}
+.navbar-brand {
+    color: black;
 }
 
-.game {
-    border: 1px solid black;
-    width: 270px;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 15px;
-}
-.game img {
-    width: 250px;
-}
-.gameTitle {
-    font-weight: bold;
-}
-
-.gameDiscount {
-    background-color: orangered;
-    margin-right: 30px;
-    width: 70px;
-    font-size: 35px;
-    margin-bottom: 5px;
-    padding: 5px;
-    border-radius: 3px;
-
-}
-
-.prices {
-    text-align: right;
-    margin: 10px;
-}
-
-.cardFooter {
-    display: flex;
-    flex-direction: row;
-}
