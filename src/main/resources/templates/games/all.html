@@ -4,7 +4,6 @@
 <body>
 <header th:replace="fragments/header"></header>
 <section class="row d-flex align-self-stretch mt-5">
-    <h1 class="gamelist" th:text="${title}"></h1>
     <div class="col-4 mt-2  mb-2 " th:each="game: ${games}">
         <div class="card px-3 pt-3 shadow-lg" >
             <img alt="img" class="card-img-top img-fluid " th:src="@{${game.photoImagePath}}">

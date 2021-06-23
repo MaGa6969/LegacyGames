@@ -6,13 +6,28 @@ header {
     background-color: #ffffff80;
     box-shadow: 0 5px rgba(144, 144, 144, 0.5);
 }
-.gamelist {
-    color: white;
-}
 .nav-link {
     color: black;
 }
+.nav-link:hover {
+    color: white;
+}
+
+.navbar-brand:hover{
+    color: white;
+}
+
 .navbar-brand {
+    font-family: 'Press Start 2P', cursive;
     color: black;
+}
+h1 {
+    color: orange;
+}
+label {
+    color: orange;
+}
+.form-control {
+    background-color: transparent;
 }
 
