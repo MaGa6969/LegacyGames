@@ -30,4 +30,10 @@ label {
 .form-control {
     background-color: transparent;
 }
+.gamefilter {
+    display: flex;
 
+}
+.gamefilter li {
+    margin: 0 15px;
+}

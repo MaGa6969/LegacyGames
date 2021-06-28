@@ -1,16 +1,13 @@
 package org.factoriaf5.legacygames.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import java.io.Serializable;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
-@Table(name = "game")
+@Table(name = "games")
 public class Game implements Serializable {
     @Id
     @GeneratedValue(strategy = SEQUENCE)
@@ -21,7 +18,9 @@ public class Game implements Serializable {
     private float price;
     private String tag;
     private float priceDiscount;
-    private String category;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
     private String publisher;
     private String pegi;
     private String photo;
@@ -88,10 +87,10 @@ public class Game implements Serializable {
         this.priceDiscount = priceDiscount;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
