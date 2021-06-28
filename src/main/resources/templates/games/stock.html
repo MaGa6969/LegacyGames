@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head th:replace="fragments/head"></head>
 
 <body>
@@ -13,37 +13,31 @@
             <input type="hidden" th:field="*{id}">
             <label class="col-md2" for="title">Title</label>
             <input th:field="*{title}" type="text" class="col-md6 form-control form-control-sm" id="title"
-                   placeholder="Enter title">
+                   placeholder="Enter title (Obligatory Field) ">
         </div>
          <div>
-            <label for="photo"> Photo </label>
-            <input type="file" name="image" accept="image/png, image/jpeg", id="photo">
+            <label class="col-md2" for="photo">Photo</label>
+            <input type="file" name="image" accept="image/png, image/jpeg", id="photo" class="col-md6 form-control form-control-sm">
          </div>
         <div class="form-group">
             <label class="col-md2" for="platform">Platform</label>
             <input th:field="*{platform}" type="text" class="col-md6 form-control form-control-sm" id="platform"
-                   placeholder="Enter platform">
+                   placeholder="Enter platform (Obligatory Field)">
         </div>
         <div class="form-group">
             <label class="col-md2" for="year">Year</label>
             <input th:field="*{year}" type="text" class="col-md6 form-control form-control-sm" id="year"
-                   placeholder="Enter year">
+                   placeholder="Enter year (Obligatory Field)">
         </div>
         <div class="form-group">
             <label class="col-md2" for="price">Price</label>
             <input th:field="*{price}" type="text" class="col-md6 form-control form-control-sm" id="price"
-                   placeholder="Enter price">
+                   placeholder="Enter price (Obligatory Field)">
         </div>
         <div class="form-group">
-            <label class="col-md2" for="etiqueta">Etiqueta</label>
-            <input th:field="*{etiqueta}" type="text" class="col-md6 form-control form-control-sm" id="etiqueta"
-                   placeholder="Enter etiqueta">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="discount">Discount</label>
-            <input th:field="*{discount}" type="text" class="col-md6 form-control form-control-sm" id="discount"
-                   placeholder="Enter discount">
-
+            <label class="col-md2" for="tag">Tag</label>
+            <input th:field="*{tag}" type="text" class="col-md6 form-control form-control-sm" id="tag"
+                   placeholder="Enter tag">
         </div>
         <div class="form-group">
             <label class="col-md2" for="priceDiscount">PriceDiscount</label>
@@ -53,7 +47,7 @@
         <div class="form-group">
             <label class="col-md2" for="category">Category</label>
             <input th:field="*{category}" type="text" class="col-md6 form-control form-control-sm" id="category"
-                   placeholder="Enter category">
+                   placeholder="Enter category (Obligatory Field)">
         </div>
         <div class="form-group">
             <label class="col-md2" for="publisher">Publisher</label>
@@ -61,14 +55,9 @@
                    placeholder="Enter publisher">
         </div>
         <div class="form-group">
-            <label class="col-md2" for="pegi">Pegi</label>
+            <label class="col-md2" for="pegi">PEGI</label>
             <input th:field="*{pegi}" type="text" class="col-md6 form-control form-control-sm" id="pegi"
-                   placeholder="Enter pegi">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="pegiDescriptors">PegiDescriptors</label>
-            <input th:field="*{pegiDescriptors}" type="text" class="col-md6 form-control form-control-sm" id="pegiDescriptors"
-                   placeholder="Enter pegiDescriptors">
+                   placeholder="Enter PEGI">
         </div>
         <div class="card-footer ">
             <input type="submit" class="btn btn-warning btn-sm" value="Save"/>

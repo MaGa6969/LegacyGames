@@ -5,12 +5,10 @@ CREATE TABLE games (
                        platform VARCHAR(255) NOT NULL,
                        year INTEGER NOT NULL,
                        price DOUBLE PRECISION NOT NULL,
-                       etiqueta VARCHAR(255),
-                       discount INTEGER,
+                       tag VARCHAR(255),
                        price_discount DOUBLE PRECISION,
                        category VARCHAR(255) NOT NULL,
                        publisher VARCHAR(255),
-                       pegi INTEGER,
-                       pegi_descriptors VARCHAR(255),
+                       pegi VARCHAR(255),
                        photo VARCHAR(64) NOT NULL
 );

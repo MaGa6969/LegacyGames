@@ -19,13 +19,11 @@ public class Game implements Serializable {
     private String platform;
     private int year;
     private float price;
-    private String etiqueta;
-    private int discount;
+    private String tag;
     private float priceDiscount;
     private String category;
     private String publisher;
-    private int pegi;
-    private String pegiDescriptors;
+    private String pegi;
     private String photo;
 
     @Override
@@ -77,15 +75,11 @@ public class Game implements Serializable {
         this.price = price;
     }
 
-    public String getEtiqueta() {
-        return etiqueta;
+    public String getTag() {
+        return tag;
     }
-    public void setEtiqueta(String etiqueta) {
-        this.etiqueta = etiqueta;
-    }
-    public int getDiscount() { return discount; }
-    public void setDiscount(int discount) {
-        this.discount = discount;
+    public void setTag(String tag) {
+        this.tag = tag;
     }
     public float getPriceDiscount(){
         return priceDiscount;
@@ -107,17 +101,11 @@ public class Game implements Serializable {
     public void setPublisher(String publisher){
         this.publisher = publisher;
     }
-    public int getPegi() {
+    public String getPegi() {
         return pegi;
     }
-    public void setPegi(int pegi) {
+    public void setPegi(String pegi) {
         this.pegi = pegi;
-    }
-     public String getPegiDescriptors() {
-        return pegiDescriptors;
-     }
-    public void setPegiDescriptors(String pegiDescriptors) {
-        this.pegiDescriptors = pegiDescriptors;
     }
 
     public String getPhotoImagePath() {
