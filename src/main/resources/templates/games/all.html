@@ -6,7 +6,7 @@
 <section class="row d-flex align-self-stretch mt-5">
     <ul class="gamefilter">
         <li><a href="/games">All</a></li>
-        <li th:each="category: ${categories}"><a href="/games" th:text="${category.name}"></a></li>
+        <li th:each="category: ${categories}"><a th:href="${'/games?categoryId='+category.id}" th:text="${category.name}"></a></li>
 <!--        <li>Sports</li>-->
 <!--        <li>Platform</li>-->
 <!--        <li>Racing</li>-->
