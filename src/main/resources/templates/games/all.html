@@ -6,34 +6,42 @@
 <section class="row d-flex align-self-stretch mt-5">
     <ul class="gamefilter list-unstyled">
         <li class="btn btn-warning"><a class="text-decoration-none text-white" href="/games">All</a></li>
-        <li class="btn btn-warning" th:each="category: ${categories}"><a class="text-decoration-none text-white" th:href="${'/games?categoryId='+category.id}" th:text="${category.name}"></a></li>
+        <li class="btn btn-warning" th:each="category: ${categories}"><a class="text-decoration-none text-white"
+                                                                         th:href="${'/games?categoryId='+category.id}"
+                                                                         th:text="${category.name}"></a></li>
     </ul>
 </section>
-  <section class="cards">
-      <div class="col-4 ms-2 mt-2  mb-2 " th:each="game: ${games}">
-        <div class="card px-3 pt-3 shadow-lg" >
+<section class="cards">
+    <div class="col-4 ms-2 mt-2  mb-2 " th:each="game: ${games}">
+        <div class="card px-3 pt-3 shadow-lg">
             <img alt="img" class="card-img-top img-fluid max-width:100% height:auto" th:src="@{${game.photoImagePath}}">
             <div class="card-body">
-                <h4  th:text="${game.title}" class="card-title text-uppercase"></h4>
+                <h4 class="card-title text-uppercase" th:text="${game.title}"></h4>
                 <div class="d-flex flex-column pb-3">
-                    <span th:text="${game.platform}" class="card-text text-uppercase"></span>
-                    <span th:text="${game.pegi}" class="card-text text-uppercase">PEGI</span>
+                    <span class="card-text text-uppercase" th:text="${game.platform}"></span>
+                    <span class="card-text text-uppercase" th:text="${game.pegi}">PEGI</span>
                 </div>
                 <div class="d-flex flex-row justify-content-between align-items-center">
                     <!-- descuento-->
-                    <h1><span th:text="${game.tag}" class="badge bg-warning fw-bold text-white"></span></h1>
+                    <h1><span class="badge bg-warning fw-bold text-white" th:text="${game.tag}"></span></h1>
                     <!-- precios-->
-                    <div th:text="${game.price}" class="d-flex align-items-end flex-column m-0">
-                        <span th:text="${game.priceDiscount}" class="text-decoration-line-through"></span>
+                    <div class="d-flex align-items-end flex-column m-0">
+                        <div th:if="${game.priceDiscount}">
+                            <div class="text-decoration-line-through" th:text="${game.price}"></div>
+                        </div>
+                        <div th:unless="${game.priceDiscount.isEmpty()}" th:text="${game.price}"></div>
+
                         <h3><span class="fw-bold"></span></h3>
                     </div>
                 </div>
                 <div class="btn-toolbar justify-content-center mt-4">
                     <div class=" btn-group me-2">
-                        <button class="btn btn-outline-primary" type="button"><a th:href="'/games/edit/'+${game.id}">Edit</a></button>
+                        <button class="btn btn-outline-primary" type="button"><a th:href="'/games/edit/'+${game.id}">Edit</a>
+                        </button>
                     </div>
                     <div class="btn-group">
-                        <button class="btn btn-outline-danger" type="button"><a th:href="'/games/delete/'+${game.id}">Delete</a></button>
+                        <button class="btn btn-outline-danger" type="button"><a th:href="'/games/delete/'+${game.id}">Delete</a>
+                        </button>
                     </div>
                 </div>
             </div>
