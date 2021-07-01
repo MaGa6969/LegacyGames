@@ -1,6 +1,8 @@
 package org.factoriaf5.legacygames.controllers;
 
+import org.factoriaf5.legacygames.models.Category;
 import org.factoriaf5.legacygames.models.Game;
+
 import org.factoriaf5.legacygames.services.CategoryService;
 import org.factoriaf5.legacygames.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +28,16 @@ public class GameController {
     }
 
     @GetMapping("/games")
-    String listGames(Model model) {
-        List<Game> games = gameService.allGames();
+    String listGames(Model model, @RequestParam(required = false) Long categoryId) {
+        List<Game> games;
+        if (categoryId == null) {
+            games = gameService.allGames();
+        } else {
+            Category category = categoryService.getCategory(categoryId);
+            games = category.getGames();
+        }
         model.addAttribute("games", games);
+        model.addAttribute("categories", categoryService.allCategories());
         return "games/all";
     }
     @GetMapping("/games/stock")
@@ -56,6 +65,7 @@ public class GameController {
         Game game = gameService.findById(id);
         model.addAttribute("game", game);
         model.addAttribute("title", "Edit game");
+        model.addAttribute("categories", categoryService.allCategories());
         return "games/stock";
     }
 
