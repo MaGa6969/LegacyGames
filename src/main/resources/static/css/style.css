@@ -41,6 +41,10 @@ label {
 }
 .gamefilter li {
     margin: auto;
+}
+.cards{
+    display: flex;
+    align-items: self-start;
 
 }
 .footer{
