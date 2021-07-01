@@ -8,9 +8,11 @@
         <li class="btn btn-warning"><a class="text-decoration-none text-white" href="/games">All</a></li>
         <li class="btn btn-warning" th:each="category: ${categories}"><a class="text-decoration-none text-white" th:href="${'/games?categoryId='+category.id}" th:text="${category.name}"></a></li>
     </ul>
-    <div class="col-4 mt-2  mb-2 " th:each="game: ${games}">
+</section>
+  <section class="cards">
+      <div class="col-4 ms-2 mt-2  mb-2 " th:each="game: ${games}">
         <div class="card px-3 pt-3 shadow-lg" >
-            <img alt="img" class="card-img-top img-fluid " th:src="@{${game.photoImagePath}}">
+            <img alt="img" class="card-img-top img-fluid max-width:100% height:auto" th:src="@{${game.photoImagePath}}">
             <div class="card-body">
                 <h4  th:text="${game.title}" class="card-title text-uppercase"></h4>
                 <div class="d-flex flex-column pb-3">
@@ -37,7 +39,6 @@
             </div>
         </div>
     </div>
-
 </section>
 <footer th:replace="fragments/footer"></footer>
 </body>

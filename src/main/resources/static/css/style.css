@@ -42,6 +42,10 @@ label {
 }
 .gamefilter li {
     margin: auto;
+}
+.cards{
+    display: flex;
+    align-items: self-start;
 
 }
 .footer{
@@ -50,7 +54,9 @@ label {
     justify-content: center;
     margin: auto;
 }
+
 .col-md6 {
     width: 90%;
     margin: 15px 0;
 }
+
