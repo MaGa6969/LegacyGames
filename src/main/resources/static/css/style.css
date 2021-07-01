@@ -33,6 +33,7 @@ label {
 }
 .form-control {
     background-color: transparent;
+    color: orange;
 }
 .gamefilter {
     display: flex;

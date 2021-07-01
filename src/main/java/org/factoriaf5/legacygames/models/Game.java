@@ -14,10 +14,10 @@ public class Game implements Serializable {
     private Long id;
     private String title;
     private String platform;
-    private int year;
-    private float price;
+    private String year;
+    private String price;
     private String tag;
-    private float priceDiscount;
+    private String priceDiscount;
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
@@ -59,18 +59,18 @@ public class Game implements Serializable {
     public void setPlatform(String platform) {
         this.platform = platform;
     }
-    public int getYear() {
+    public String getYear() {
         return year;
     }
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
-    public float getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -80,10 +80,10 @@ public class Game implements Serializable {
     public void setTag(String tag) {
         this.tag = tag;
     }
-    public float getPriceDiscount(){
+    public String getPriceDiscount(){
         return priceDiscount;
     }
-    public void setPriceDiscount(float priceDiscount) {
+    public void setPriceDiscount(String priceDiscount) {
         this.priceDiscount = priceDiscount;
     }
 
