@@ -24,6 +24,10 @@ header {
 h1 {
     color: orange;
 }
+h2 {
+    color: orange;
+    text-align: center;
+}
 label {
     color: orange;
 }
@@ -36,4 +40,8 @@ label {
 }
 .gamefilter li {
     margin: 0 15px;
+}
+.footer{
+    position:absolute;
+    bottom:0;
 }
