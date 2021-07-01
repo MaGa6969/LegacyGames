@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
 import java.util.List;
+
 @Controller
 
 public class GameController {
@@ -27,7 +28,7 @@ public class GameController {
         this.categoryService = categoryService;
     }
 
-    @GetMapping("/games")
+    @GetMapping(value = {"/games", "/index", "/"})
     String listGames(Model model, @RequestParam(required = false) Long categoryId) {
         List<Game> games;
         if (categoryId == null) {
@@ -40,28 +41,35 @@ public class GameController {
         model.addAttribute("categories", categoryService.allCategories());
         return "games/all";
     }
+
     @GetMapping("/games/stock")
-    String getForm(Model model){
+    String getForm(Model model) {
         Game game = new Game();
         model.addAttribute("game", game);
         model.addAttribute("title", "Create new game");
         model.addAttribute("categories", categoryService.allCategories());
         return "games/stock";
     }
+
     @PostMapping("/games/stock")
     public String addGame(
             @ModelAttribute Game game,
             @RequestParam("image") MultipartFile multipartFile)
             throws IOException {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-        game.setPhoto(fileName);
-        gameService.save(game);
-        String uploadDir = "game-photo/" + game.getId();
-        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+        if (!fileName.equals("")) {
+            game.setPhoto(fileName);
+            gameService.save(game);
+            String uploadDir = "game-photo/" + game.getId();
+            FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+        } else {
+            gameService.save(game);
+        }
         return "redirect:/games";
     }
+
     @GetMapping("/games/edit/{id}")
-    String editGame(Model model, @PathVariable Long id){
+    String editGame(Model model, @PathVariable Long id) {
         Game game = gameService.findById(id);
         model.addAttribute("game", game);
         model.addAttribute("title", "Edit game");
@@ -70,7 +78,7 @@ public class GameController {
     }
 
     @GetMapping("/games/delete/{id}")
-    String removeGame(@PathVariable Long id){
+    String removeGame(@PathVariable Long id) {
         gameService.delete(id);
         return "redirect:/games";
     }
