@@ -30,10 +30,11 @@ h2 {
 }
 label {
     color: orange;
+
 }
 .form-control {
     background-color: transparent;
-    color: orange;
+    color: white;
 }
 .gamefilter {
     display: flex;
@@ -53,3 +54,9 @@ label {
     justify-content: center;
     margin: auto;
 }
+
+.col-md6 {
+    width: 90%;
+    margin: 15px 0;
+}
+

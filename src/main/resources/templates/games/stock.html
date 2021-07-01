@@ -12,35 +12,35 @@
         <div class="form-group">
             <input type="hidden" th:field="*{id}">
             <label class="col-md2" for="title">Title</label>
-            <input th:field="*{title}" type="text" class="col-md6 form-control form-control-sm" id="title">
+            <input th:field="*{title}" type="text" class="col-md6 form-control" id="title">
         </div>
          <div>
             <label class="col-md2" for="photo">Photo</label>
-            <input type="file" name="image" accept="image/png, image/jpeg", id="photo" class="col-md6 form-control form-control-sm">
+            <input type="file" name="image" accept="image/png, image/jpeg", id="photo" class="col-md6 form-control">
          </div>
         <div class="form-group">
             <label class="col-md2" for="platform">Platform</label>
-            <input th:field="*{platform}" type="text" class="col-md6 form-control form-control-sm" id="platform">
+            <input th:field="*{platform}" type="text" class="col-md6 form-control" id="platform">
         </div>
         <div class="form-group">
             <label class="col-md2" for="year">Year</label>
-            <input th:field="*{year}" type="text" class="col-md6 form-control form-control-sm" id="year">
+            <input th:field="*{year}" type="text" class="col-md6 form-control" id="year">
         </div>
         <div class="form-group">
             <label class="col-md2" for="price">Price</label>
-            <input th:field="*{price}" type="text" class="col-md6 form-control form-control-sm" id="price">
+            <input th:field="*{price}" type="text" class="col-md6 form-control" id="price">
         </div>
         <div class="form-group">
             <label class="col-md2" for="tag">Tag</label>
-            <input th:field="*{tag}" type="text" class="col-md6 form-control form-control-sm" id="tag">
+            <input th:field="*{tag}" type="text" class="col-md6 form-control" id="tag">
         </div>
         <div class="form-group">
             <label class="col-md2" for="priceDiscount">PriceDiscount</label>
-            <input th:field="*{priceDiscount}" type="text" class="col-md6 form-control form-control-sm" id="priceDiscount">
+            <input th:field="*{priceDiscount}" type="text" class="col-md6 form-control" id="priceDiscount">
         </div>
         <div class="form-group">
             <label class="col-md2" for="category">Category</label>
-            <select th:field="*{category}" type="text" class="col-md6 form-control form-control-sm" id="category">
+            <select th:field="*{category}" type="text" class="col-md6 form-control" id="category">
                 <option th:each="category: ${categories}"
                         th:value="${category.id}"
                         th:text="${category.name}">
@@ -49,10 +49,10 @@
         </div>
         <div class="form-group">
             <label class="col-md2" for="publisher">Publisher</label>
-            <input th:field="*{publisher}" type="text" class="col-md6 form-control form-control-sm" id="publisher">
+            <input th:field="*{publisher}" type="text" class="col-md6 form-control" id="publisher">
         <div class="form-group">
             <label class="col-md2" for="pegi">PEGI</label>
-            <input th:field="*{pegi}" type="text" class="col-md6 form-control form-control-sm" id="pegi">
+            <input th:field="*{pegi}" type="text" class="col-md6 form-control" id="pegi">
         </div>
         <div class="card-footer ">
             <input type="submit" class="btn btn-warning btn-sm" value="Save"/>
