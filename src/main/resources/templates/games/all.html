@@ -34,11 +34,6 @@
                         <div th:if="${game.priceDiscount}"><div th:text="${game.priceDiscount}" style="font-size: 30px; font-weight: bolder; color: #FB542B;"></div></div>
 
 
-
-                        <div th:if="${game.priceDiscount}">
-                            <div class="text-decoration-line-through" th:text="${game.price}"></div></div>
-                        <div th:unless="${game.priceDiscount}" ><div>th:text="${game.price}"></div></div>
-
                     </div>
                 </div>
                 <div class="btn-toolbar justify-content-center mt-4">
