@@ -9,6 +9,12 @@ header {
 .nav-link {
     color: black;
 }
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    background-color: #fa4225;
+
+}
+
 .nav-link:hover {
     color: white;
 }
@@ -30,7 +36,8 @@ h2 {
 }
 label {
     color: orange;
-
+    font-family: 'VT323', monospace;
+    font-size: 40px;
 }
 .form-control {
     background-color: transparent;
