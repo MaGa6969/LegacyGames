@@ -26,10 +26,11 @@
                     <h1><span class="badge bg-warning fw-bold text-white" th:text="${game.tag}"></span></h1>
                     <!-- precios-->
                     <div class="d-flex align-items-end flex-column m-0">
-                        <div th:if="${game.priceDiscount}">
-                            <div class="text-decoration-line-through" th:text="${game.price}"></div>
-                        <div th:unless="${game.priceDiscount.isEmpty()}" th:text="${game.price}"></div>
-                        </div>
+                        <div th:text="${game.price}"></div>
+
+                        <div th:if="${game.priceDiscount}"><div th:text="${game.priceDiscount}" style="font-size: 30px; font-weight: bolder; color: #FB542B;"></div></div>
+
+
                     </div>
                 </div>
                 <div class="btn-toolbar justify-content-center mt-4">
