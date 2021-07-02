@@ -11,11 +11,13 @@
                                                                          th:text="${category.name}"></a></li>
     </ul>
 </section>
-<section class="cards">
-    <div class="col-4 ms-2 mt-2  mb-2 " th:each="game: ${games}">
-        <div class="card px-3 pt-3 shadow-lg">
-            <img alt="img" class="card-img-top img-fluid " th:src="@{${game.photoImagePath}}">
-            <div class="card-body">
+<section class="cards" >
+    <div class="col-4 ms-2 mt-2  mb-2  " th:each="game: ${games}">
+        <div class="card px-3 pt-3 shadow-lg" >
+            <div class="card-img">
+            <img alt="img" class=" card-img-top img-fluid " th:src="@{${game.photoImagePath}}">
+            </div>
+                <div class="card-body">
                 <h4 class="card-title text-uppercase" th:text="${game.title}"></h4>
                 <div class="d-flex flex-column pb-3">
                     <span class="card-text text-uppercase" th:text="${game.platform}"></span>
@@ -26,10 +28,16 @@
                     <h1><span class="badge bg-warning fw-bold text-white" th:text="${game.tag}"></span></h1>
                     <!-- precios-->
                     <div class="d-flex align-items-end flex-column m-0">
+
                         <div th:text="${game.price}"></div>
 
                         <div th:if="${game.priceDiscount}"><div th:text="${game.priceDiscount}" style="font-size: 30px; font-weight: bolder; color: #FB542B;"></div></div>
 
+
+
+                        <div th:if="${game.priceDiscount}">
+                            <div class="text-decoration-line-through" th:text="${game.price}"></div></div>
+                        <div th:unless="${game.priceDiscount}" ><div>th:text="${game.price}"></div></div>
 
                     </div>
                 </div>
@@ -50,34 +58,3 @@
 <footer th:replace="fragments/footer"></footer>
 </body>
 </html>
-<!--
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head"></head>
-<body>
-<header th:replace="fragments/header"></header>
-<section class="container">
-    <h1 th:text="${title}"></h1>
-    <div class="table">
-        <div class="game" th:each="game: ${games}">
-&lt;!&ndash;            <img th:src="@{/images/default.jpg}">&ndash;&gt;
-         <img th:src="@{${game.photoImagePath}}" />
-            <div class="gameTitle" th:text="${game.title}"></div>
-            <div th:text="${game.platform}"></div>
-            <div th:text="${game.pegi}"></div>
-
-            <div class="cardFooter">
-                <div class="gameDiscount" th:text="${game.discount}"></div>
-                 <div class="prices">
-                    <div th:text="${game.price}"></div>
-                     <div th:text="${game.priceDiscount}"></div>
-                 </div>
-                <a class="btn btn-success btn-sm" th:href="'/games/edit/'+${game.id}">Edit</a>
-                <a class="btn btn-danger btn-sm" th:href="'/games/delete/'+${game.id}">Delete</a>
-            </div>
-        </div>
-    </div>
-</section>
-<footer th:replace="fragments/footer"></footer>
-</body>
-</html>-->
