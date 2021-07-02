@@ -9,11 +9,6 @@ header {
 .nav-link {
     color: black;
 }
-.navbar-expand-lg .navbar-nav {
-    flex-direction: row;
-    background-color: #fa4225;
-
-}
 
 .nav-link:hover {
     color: white;
